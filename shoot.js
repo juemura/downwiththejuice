@@ -4,6 +4,7 @@ function preload() {
 
     game.load.image('arrow', 'assets/sprites/arrow.png');
     game.load.image('bullet', 'assets/sprites/purple_ball.png');
+    game.load.image('test', 'assets/test.png')
     
 }
 
@@ -16,9 +17,9 @@ var nextFire = 0;
 function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
-
+    game.add.sprite(0,0, 'test');
     game.stage.backgroundColor = '#313131';
-
+    game.stage.backgroundImage 
     bullets = game.add.group();
     bullets.enableBody = true;
     bullets.physicsBodyType = Phaser.Physics.ARCADE;
