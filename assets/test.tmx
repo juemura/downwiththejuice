@@ -6,6 +6,9 @@
  <tileset firstgid="1025" name="juice2" tilewidth="32" tileheight="32" tilecount="196" columns="14">
   <image source="juice2.png" width="465" height="465"/>
  </tileset>
+ <tileset firstgid="1221" name="juice1" tilewidth="32" tileheight="32" tilecount="9" columns="3">
+  <image source="juice1.png" width="110" height="110"/>
+ </tileset>
  <layer name="Tile Layer 1" width="50" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
