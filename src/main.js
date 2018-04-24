@@ -2,9 +2,11 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-    game.load.image('arrow', 'assets/houses.piskel.png');
-    game.load.image('bullet', 'assets/purple_ball.png');
-    
+
+    game.load.image('arrow', 'assets/sprites/arrow.png');
+    game.load.image('bullet', 'assets/sprites/purple_ball.png');
+    game.load.image('test', 'assets/test.png')
+    game.load.image('border', 'assets/Window.png')
 }
 
 var sprite;
@@ -16,9 +18,10 @@ var nextFire = 0;
 function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
-
-    game.stage.backgroundColor = '#313131';
-
+    game.add.sprite(0,-20, 'test');
+    game.add.sprite(0,0, 'border');
+    game.stage.backgroundColor = '#0000FF';
+    game.stage.backgroundImage 
     bullets = game.add.group();
     bullets.enableBody = true;
     bullets.physicsBodyType = Phaser.Physics.ARCADE;
