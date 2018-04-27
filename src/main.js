@@ -5,10 +5,12 @@ function preload() {
 
     game.load.image('arrow', 'assets/arrow.png');
     game.load.image('bullet', 'assets/purple_ball.png');
-    game.load.image('test', 'assets/test.png')
-    game.load.image('border', 'assets/Window.png')
+    game.load.image('test', 'assets/test.png');
+    game.load.image('border', 'assets/Window.png');
     game.load.tilemap('test2', 'assets/test2.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('test2tiles', 'assets/test2.png');
+//    game.load.image('`test2tiles`', 'assets/test2.png');
+    game.load.image('sprite', "assets/test2.png");
+    
 }
 
 var sprite;
@@ -21,11 +23,14 @@ var layer;
 function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.add.sprite(0,-20, 'test2tiles');
+//    game.add.sprite(0,-20, 'test2tiles');
+//    map = game.add.tilemap('test2');
+//    map.addTilesetImage('Tile Layer 1', 'test2tiles');
+//    layer = map.createLayer('World1');
+    map = game.add.tileSprite(0, 0, 30400, 320, 'sprite');
+    
     game.add.sprite(0,0, 'border');
-    map = game.add.tilemap('test2');
-    map.addTilesetImage('Tile Layer 1', 'test2tiles');
-    layer = map.createLayer('World1');
+    
 //    layer.resizeWorld();
     game.stage.backgroundColor = '#0000FF';
     game.stage.backgroundImage 
@@ -43,10 +48,13 @@ function create() {
     game.physics.enable(sprite, Phaser.Physics.ARCADE);
 
     sprite.body.allowRotation = false;
+    
 
 }
 
 function update() {
+    
+    map.tilePosition.x += 2;
 
     sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
