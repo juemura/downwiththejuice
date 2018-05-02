@@ -54,7 +54,7 @@ function create() {
 
 function update() {
     
-    map.tilePosition.x += 2;
+    map.tilePosition.x += 5;
 
     sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
