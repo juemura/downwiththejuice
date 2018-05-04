@@ -2,9 +2,9 @@ var game = new Phaser.Game(700, 392, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-
+    game.load.image('cj', 'assets/photo.jpg');
     game.load.image('arrow', 'assets/arrow.png');
-    game.load.image('bullet', 'assets/purple_ball.png');
+    game.load.image('bullet', 'assets/NewMilk.png');
     game.load.image('test', 'assets/test.png');
     game.load.image('border', 'assets/Window.png');
     game.load.tilemap('test2', 'assets/test2.json', null, Phaser.Tilemap.TILED_JSON);
@@ -38,9 +38,10 @@ function create() {
     bullets.enableBody = true;
     bullets.physicsBodyType = Phaser.Physics.ARCADE;
 
-    bullets.createMultiple(50, 'bullet');
+    bullets.createMultiple(3, 'bullet');
     bullets.setAll('checkWorldBounds', true);
     bullets.setAll('outOfBoundsKill', true);
+    
     
     sprite = game.add.sprite(600, 350, 'arrow');
     sprite.anchor.set(0.5);
@@ -82,7 +83,7 @@ function fire() {
 
 function render() {
 
-    game.debug.text('Active Bullets: ' + bullets.countLiving() + ' / ' + bullets.total, 32, 32);
+    game.debug.text('Your Milkshakes on screen ' + bullets.countLiving() + ' / ' + bullets.total, 32, 32);
     game.debug.spriteInfo(sprite, 32, 450);
 
 }
