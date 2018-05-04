@@ -2,14 +2,14 @@ var game = new Phaser.Game(700, 392, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
+    game.load.image('juice2', 'assets/juice2.jpg');
     game.load.image('cj', 'assets/photo.jpg');
     game.load.image('arrow', 'assets/arrow.png');
     game.load.image('bullet', 'assets/NewMilk.png');
-    game.load.image('test', 'assets/test.png');
+//    game.load.image('test', 'assets/test.png');
     game.load.image('border', 'assets/Window.png');
     game.load.tilemap('test2', 'assets/test2.json', null, Phaser.Tilemap.TILED_JSON);
-//    game.load.image('`test2tiles`', 'assets/test2.png');
-    game.load.image('sprite', "assets/test2.png");
+    game.load.image('tiles', "assets/test2.png");
     
 }
 
@@ -25,9 +25,12 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 //    game.add.sprite(0,-20, 'test2tiles');
 //    map = game.add.tilemap('test2');
-//    map.addTilesetImage('Tile Layer 1', 'test2tiles');
+//    map.addTilesetImage('collision', 'tiles');
 //    layer = map.createLayer('World1');
-    map = game.add.tileSprite(0, 0, 30400, 320, 'sprite');
+    map = game.add.tileSprite(0, 150, 30400, 320, 'tiles');
+    
+//    var backgroundlayer = map.createLayer('Background');
+    //resizes the game world to match the layer dimensions
     
     game.add.sprite(0,0, 'border');
     
@@ -54,8 +57,11 @@ function create() {
 }
 
 function update() {
+    // roadAndBackground.tilePosition.x += 10
+    // for all houses, do house.tilePosition.x += 10
+    // for all juiceries, do juicery.tilePosition.x += 10
     
-    map.tilePosition.x += 5;
+    map.tilePosition.x += 10;
 
     sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
