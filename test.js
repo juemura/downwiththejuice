@@ -3,5 +3,12 @@ var game = new Phaser.Game(700, 392, Phaser.CANVAS, 'phaser-example', { preload:
 function preload() {
 
     game.load.image('assets/TitleScreen.jpg');
-    <script src="TitleScreen.png"></script>
-    
+}
+
+function update (){
+    if 'x: >= 22' + game.input.mousePointer.x 
+      '  y: >=22' + game.input.mousePointer.y {
+          game.load.image('assests/jiuce1');
+      }
+
+}

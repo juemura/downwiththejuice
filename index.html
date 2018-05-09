@@ -11,12 +11,13 @@
         <div id="phaser-example"></div>
         <script>
             (function (){
-//                var game = new Phaser.Game(800, 200, Phaser.CANVAS, "game");
+                var game = new Phaser.Game(700, 392, Phaser.CANVAS, "game");
 //                game.state.add("Preload", preload);
-//                game.state.add("GameTitle", gameTitle);
-//                game.state.add("Main", mainState);
+                game.state.add("GameTitle", gameTitle);
+                game.state.add("Main", mainState);
 //                game.state.add("GameOver", gameOver);
-//                game.state.start("Boot");
+                
+                game.state.start("GameTitle");
             })();
             
         </script>
