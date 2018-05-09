@@ -1,6 +1,7 @@
 var gameTitle = function(game){}
 
 gameTitle.prototype = {
+    
     create:function(){
         var gameTitle=this.game.add.sprite(250,100, "gameTitle");
         gameTitle.anchor.setTo(0.5, 0.5);
