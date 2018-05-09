@@ -1,4 +1,4 @@
-
+//
 //var gameTitle = function(game){};
 //
 //gameTitle.prototype = {
@@ -32,4 +32,3 @@
 //        this.game.state.start("Main");
 //    }
 //};
-//>>>>>>> e02791b49ac674e074f3a2797f08d4cd66d659be
